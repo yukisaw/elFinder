@@ -1014,7 +1014,7 @@ class elFinder {
 
 		if (!empty($args['init'])) {
 			$result['api'] = $this->version;
-			$result['uplMaxSize'] = '50M'; //ini_get('upload_max_filesize');
+			$result['uplMaxSize'] = "50M"; //ini_get('upload_max_filesize');
 			$result['uplMaxFile'] = ini_get('max_file_uploads');
 			$result['netDrivers'] = array_keys(self::$netDrivers);
 			if ($volume) {
@@ -1559,7 +1559,7 @@ class elFinder {
 					$url = trim($matches[1]);
 					$hash = isset($matches[2])? trim($matches[2]) : '';
 					if (!preg_match('/^https?:\//',$url)) { // no scheme
-						if ($url{0} != '/') { // Relative path
+						if ($url[0] != '/') { // Relative path
 							// to Absolute path
 							$url = substr($url_path,0,strrpos($url_path,'/')).'/'.$url;
 						}
